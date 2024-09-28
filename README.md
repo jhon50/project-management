@@ -10,7 +10,7 @@ Follow these steps to get the project setup on your machine.
 ### 1. Clone the repository
 
 ```bash
-git clone xxxxx
+git clone https://github.com/jhon50/project-management.git
 ```
 
 ### 2. Install Ruby (using RVM)
