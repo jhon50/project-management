@@ -36,6 +36,8 @@ bundle exec rails server
 
 Project should be available at http://localhost:3000
 
+Or you can also access it on Heroku: https://project-manager-homey-19-eae5984fb9a9.herokuapp.com/
+
 Tutorial:
  - To edit a comment click on it
  - To change the status of a project click on the status dropdown and simply select another status
