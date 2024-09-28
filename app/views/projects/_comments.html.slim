@@ -1,0 +1,15 @@
+div.mt-4 data-controller="comments"
+  h2 Comments
+  div data-target="comments.list" data-project-id="#{@project.id}"
+    - @project.comments.each do |comment|
+      .font-weight-bold.mt-3 = comment.user.email
+
+      - if comment.user_id != current_user.id || comment.description.include?('Project status')
+        .card.card-body.mt-2 data-comment-id="#{comment.id}"
+          = comment.description
+      - else
+        .card.card-body.mt-2 data-action="click->comments#editComment" data-comment-id="#{comment.id}"
+          = comment.description
+  form.mt-4 data-action="submit->comments#upsertComment"
+    input type="text" data-target="comments.form"
+    input type="submit" data-target="comments.submitButton" value="Add Comment"

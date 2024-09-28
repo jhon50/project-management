@@ -1,0 +1,15 @@
+h1 Project Details
+div.card data-controller="projects" data-project-id="#{@project.id}"
+  div.card-body
+    h5.card-title= @project.name
+    p.card-text= @project.description
+    p Status:
+    select data-target="projects.status" data-action="change->projects#updateStatus"
+      - Project.statuses.keys.each do |status|
+        - if status == @project.status
+          option[value="#{status}" selected] = status.humanize
+        - else
+          option value="#{status}" = status.humanize
+
+= link_to 'Back to Projects', projects_path, class: 'btn btn-primary mt-3'
+= render 'comments'

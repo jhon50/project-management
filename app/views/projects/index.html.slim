@@ -1,0 +1,8 @@
+= link_to 'New Project', new_project_path, class: 'btn btn-primary mb-3'
+div#accordion
+  - @projects.each do |project|
+    = link_to project_path(project), class: 'text-decoration-none text-dark' do
+      div.card.mb-2
+        div.card-header
+          h5.mb-0
+            = project.name

@@ -1,24 +1,37 @@
-# README
+# Project Manager
+This is a simple project management application created to demonstrate usage of Rails 7 with Stimulus.
+You should be able to add comments to a project discussion and edit comments.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Also you can change the status of the project and a log entry will be added as a comment to record who made the change.
+## Getting Started
 
-Things you may want to cover:
+Follow these steps to get the project setup on your machine.
 
-* Ruby version
+### 1. Clone the repository
 
-* System dependencies
+```bash
+git clone xxxxx
+```
 
-* Configuration
+### 2. Install Ruby (using RVM)
 
-* Database creation
+```bash
+rvm install 3.1.4
+```
 
-* Database initialization
+### 3. Run setup
 
-* How to run the test suite
+```bash
+bundle exec rake db:setup
+bundle exec rake db:migrate
+bundle exec rake db:test:prepare
+bundle exec rake db:seed (This will create default Project records)
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### 3. Run rails server
 
-* Deployment instructions
+```bash
+bundle exec rails server
+```
 
-* ...
+Project should be available at http://localhost:3000
