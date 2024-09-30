@@ -30,6 +30,8 @@ export default class extends Controller {
   addComment() {
     let comment = this.formTarget.value
 
+    if (comment === "") return;
+
     let newComment = document.createElement("div")
     newComment.classList.add("card", "card-body", "mt-2")
     newComment.textContent = comment
